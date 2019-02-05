@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="sell-form">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">User Name</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter User Name">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Toys Name</label>
+                    <input type="text" class="form-control" id="toyname" placeholder="Enter Toys Name">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Price</label>
+                    <input type="text" class="form-control" id="price" placeholder="Enter Price">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Location</label>
+                    <input type="text" class="form-control" id="location" placeholder="Enter Location">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Enter Description">
+                </div>
+                <div class="form-group">
+                    <label class="file-upload-container" for="file-upload">
+                        <input id="file-upload" type="file" style="display:none;">
+                        Select an Image
+                    </label>
+                </div>
+
+                <button type="" class="btn btn-primary" id="sellsubmit">Submit</button>
+            </form>
+            <h3>Sell:</h3>
+            <ul id="sell-list" class="list-group">
+                {{#each toys}}
+                <li data-id="{{this.id}}" class="list-group-item">
+                    <a href="example/{{this.id}}">{{this.username}}</a>
+                    <button class="btn btn-danger float-right delete">ｘ</button>
+                </li>
+                {{/each}}
+            </ul><br />
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/Sell.js"></script>
