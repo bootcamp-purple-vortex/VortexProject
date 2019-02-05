@@ -1,6 +1,10 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var mustacheExpress = require('mustache-express');
+
+// app.engine('html', mustacheExpress());
+// app.set('view engine', 'mustache');
 
 var db = require("./models");
 
@@ -17,7 +21,8 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main"
-  })
+  }),
+  mustacheExpress()
 );
 app.set("view engine", "handlebars");
 
