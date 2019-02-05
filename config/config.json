@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Goof4ball$",
+    "password": "W84dinner!",
     "database": "toys_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "testdb",
+    "database": "toys_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false

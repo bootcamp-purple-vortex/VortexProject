@@ -1,7 +1,14 @@
 require("dotenv").config();
+
 const express = require("express");
 const exphbs = require("express-handlebars");
+const mustacheExpress = require('mustache-express');
+
+// app.engine('html', mustacheExpress());
+// app.set('view engine', 'mustache');
+
 const db = require("./models");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -15,7 +22,8 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main"
-  })
+  }),
+  mustacheExpress()
 );
 app.set("view engine", "handlebars");
 
