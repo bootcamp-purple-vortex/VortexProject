@@ -1,2 +1,3 @@
+
 DROP DATABASE IF EXISTS toys_db;
 CREATE DATABASE toys_db;

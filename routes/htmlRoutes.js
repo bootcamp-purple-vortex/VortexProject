@@ -1,6 +1,6 @@
-var db = require("../models");
+const db = require("../models");
 
-module.exports = function(app) {
+module.exports = app => {
   // Load index page
   app.get("/", function(req, res) {
     db.Toys.findAll({}).then(function(dbExamples) {
@@ -31,8 +31,8 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/example/:id", (req, res) => {
+    db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
       res.render("example", {
         example: dbExample
       });
@@ -40,7 +40,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", (req, res) => {
     res.render("404");
   });
 };
