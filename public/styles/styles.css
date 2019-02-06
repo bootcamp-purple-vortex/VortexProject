@@ -1,3 +1,32 @@
 .list-group-item {
   line-height: 2.5;
 }
+.card{
+  float: left;
+}
+#signout{
+  display: block;
+}
+.toyimage{
+  height: 400px;
+  width: 400px;
+}
+.carousel-inner > .carousel-item > img {
+  width:100%;
+  height:350px;
+}
+.column{
+  float: left;
+}
+.card{
+  margin-bottom: 15px;
+}
+.cardimage{
+  height: 250px;
+}
+.sell-form{
+  margin-top: 15px;
+}
+.nav-link{
+  margin-top: 1px;
+}

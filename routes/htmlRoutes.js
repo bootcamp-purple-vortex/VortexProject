@@ -24,20 +24,20 @@ module.exports = app => {
    // Load example page and pass in an example by id
    app.get("/sell/:id", function(req, res) {
     db.Toys.findOne({ where: { id: req.params.id } }).then(function(dbToys) {
-      res.render("example", {
+      res.render("toys", {
         toys: dbToys
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", (req, res) => {
-    db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
+  // app.get("/example/:id", (req, res) => {
+  //   db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
+  //     res.render("example", {
+  //       example: dbExample
+  //     });
+  //   });
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", (req, res) => {

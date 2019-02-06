@@ -1,3 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+    <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">ToYoda</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="text-center">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/" class="text-light">
+                                Home</a></button>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/sell" class="text-light">Sell
+                                Your Item</a></button>
+                    </div>
+                </li>
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                {{!-- <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div> --}}
+                <!-- Right -->
+                <ul class="right navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="/checkout">
+                            <span class="badge red z-depth-1 mr-1 navbarcart">0</span>
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    {{!-- <li class="nav-item">
+                        <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
+                            target="_blank">
+                            <i class="fab fa-github mr-2"></i>MDB GitHub
+                        </a>
+                    </li> --}}
+
+                    <li class="nav-item">
+                        <div class="g-signin2" data-onsuccess="onSignin" style="margin-top: 2px; margin-left: 3px; ">
+                        </div>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+        <!-- Collapsible content -->
+    </div>
+</nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -31,15 +104,15 @@
 
                 <button type="" class="btn btn-primary" id="sellsubmit">Submit</button>
             </form>
-            <h3>Sell:</h3>
-            <ul id="sell-list" class="list-group">
+            {{!-- <h3>Sell:</h3> --}}
+            {{!-- <ul id="sell-list" class="list-group">
                 {{#each toys}}
                 <li data-id="{{this.id}}" class="list-group-item">
                     <a href="example/{{this.id}}">{{this.username}}</a>
                     <button class="btn btn-danger float-right delete">ｘ</button>
                 </li>
                 {{/each}}
-            </ul><br />
+            </ul><br /> --}}
         </div>
     </div>
 </div>
