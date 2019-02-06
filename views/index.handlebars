@@ -4,14 +4,14 @@
     <div class="col-md-12">
       {{!-- <h1>{{msg}}</h1> --}}
 
-      <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <!-- Navbar Brand -->
         <a class="navbar-brand" href="#">TOYoda</a>
 
         <!-- Possible change this to an "Add Item" button -->
         <!-- Add login button -->
         <form class="form-inline my-1">
-          <a href="/sell" type="button" class="btn btn-info btn-rounded waves-effect sell">Add Item</a>
+          <a href="/sell" type="button" class="btn btn-info btn-rounded waves-effect sell">Sell your toy</a>
           <button type="button" class="btn btn-success btn-rounded waves-effect">Sign In</button>
         </form>
       </nav>
@@ -79,7 +79,7 @@
                 {{!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's
                   content.</p> --}}
-                <a href="sell/{{this.id}}" class="btn btn-primary">Buy this toy!</a>
+                <a href="sell/{{this.id}}" class="btn" id ='sell-button'>Buy this toy!</a>
               </div>
             </div>
             {{/each}}

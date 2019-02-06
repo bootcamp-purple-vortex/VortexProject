@@ -1,10 +1,23 @@
+nav{
+  background-color: #75934e;
+}
+
+.navbar-brand {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+}
+
+body{
+  background-color: #d5cfb6;
+}
+
+#sell-button{
+  background-color: #3c3c20;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
-
-/* .carouselItem, #carouselMain, .carousel-inner {
-  height: 100px;
-} */
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
