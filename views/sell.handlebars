@@ -77,27 +77,33 @@
             <form class="sell-form">
                 <div class="form-group">
                     <label for="formGroupExampleInput">User Name</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter User Name">
+                    <input type="text" class="form-control" id="username" placeholder="Enter User Name" required>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Toys Name</label>
-                    <input type="text" class="form-control" id="toyname" placeholder="Enter Toys Name">
+                    <input type="text" class="form-control" id="toyname" placeholder="Enter Toys Name" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">Price</label>
-                    <input type="text" class="form-control" id="price" placeholder="Enter Price">
+                     <label for="formGroupExampleInput2">Price</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="price" placeholder="Enter Price" required>
+                    </div>
+                    
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Location</label>
-                    <input type="text" class="form-control" id="location" placeholder="Enter Location">
+                    <input type="text" class="form-control" id="location" placeholder="Enter Location" required>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Enter Description">
+                    <input type="text" class="form-control" id="description" placeholder="Enter Description" required>
                 </div>
                 <div class="form-group">
                     <label class="file-upload-container" for="file-upload">
-                        Upload an image of your toy: <input id="file-upload"type="file">
+                        Upload an image of your toy: <input id="file-upload" type="file">
                     </label>
                 </div>
 
