@@ -21,7 +21,7 @@ upload_file.addEventListener("change", function(event){
   var formdata = new FormData();
   formdata.append('file', file);
   formdata.append('upload_preset', UPLOAD_PRESET);
-
+ 
   axios({
       url: CLOUDINARY_URL,
       method: 'POST',
