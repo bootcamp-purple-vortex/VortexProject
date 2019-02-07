@@ -3,20 +3,20 @@ const db = require("../models");
 module.exports = app => {
   // Load index page
   app.get("/", function(req, res) {
-    db.Toys.findAll({}).then(function(dbExamples) {
+    db.Toys.findAll({}).then(function(dbToys) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        toys: dbToys
       });
     });
   });
 
   // Load sell page
   app.get("/sell", function(req, res) {
-    db.Toys.findAll({}).then(function(dbExamples) {
+    db.Toys.findAll({}).then(function(dbToys) {
       res.render("sell", {
         msg: "Welcome!",
-        examples: dbExamples
+        toys: dbToys
       });
     });
   });
@@ -26,15 +26,6 @@ module.exports = app => {
     db.Toys.findOne({ where: { id: req.params.id } }).then(function(dbToys) {
       res.render("buy", {
         toys: dbToys
-      });
-    });
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", (req, res) => {
-    db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
-      res.render("buy", {
-        example: dbExample
       });
     });
   });
