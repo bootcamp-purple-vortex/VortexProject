@@ -1,4 +1,3 @@
-
 // Get references to sell page elements
 var $username = $("#username");
 var $toysname = $("#toyname");
@@ -42,48 +41,26 @@ upload_file.addEventListener("change", function(event){
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-    // saveExample: function (example) {
-    //   return $.ajax({
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     type: "POST",
-    //     url: "api/examples",
-    //     data: JSON.stringify(example)
-    //   });
-    // },
-    saveSell: function (toys) {
-      return $.ajax({
-        headers: {
-          "Content-Type": "application/json"
-        },
-        type: "POST",
-        url: "/api/sell",
-        data: JSON.stringify(toys)
-      });
-    },
-    getSell: function () {
-      return $.ajax({
-        url: "/api/sell",
-        type: "GET"
-      });
-    },
-    // getExamples: function () {
-    //   return $.ajax({
-    //     url: "api/examples",
-    //     type: "GET"
-    //   });
-    // },
-    // deleteExample: function (id) {
-    //   return $.ajax({
-    //     url: "api/examples/" + id,
-    //     type: "DELETE"
-    //   });
-    // }
-  };
-
-  // refreshSell gets new toys from the db and repopulates the list
-var refreshSell = function () {
+   
+  saveSell: function (toys) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/sell",
+      data: JSON.stringify(toys)
+    });
+  },
+  getSell: function () {
+    return $.ajax({
+      url: "/api/sell",
+      type: "GET"
+    });
+  }
+};
+// refreshSell gets new toys from the db and repopulates the list
+var refreshSell = function() {
     API.getSell().then(function (data) {
       var $sells = data.map(function (sell) {
         var $a = $("<a>")
@@ -140,5 +117,5 @@ var handlesellFormSubmit = function (event) {
     $description.val("");
   
   };
-  
+
 $sellsubmit.on("click", handlesellFormSubmit);

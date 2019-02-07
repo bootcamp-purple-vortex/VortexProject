@@ -4,10 +4,10 @@
     <div class="col-md-12">
       {{!-- <h1>{{msg}}</h1> --}}
 
-      <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
           <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">ToYoda</a>
+          <a class="navbar-brand" href="#">TOYoda</a>
 
           <!-- Collapse button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -121,15 +121,15 @@
               <div class="carousel-inner" role="listbox">
                 <!-- First Slide -->
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First Slide">
+                  <img class="d-block w-100" src="https://via.placeholder.com/728x150.png?text=Test_Image_1" alt="First Slide">
                 </div>
                 <!-- Second Slide -->
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second Slide">
+                  <img class="d-block w-100" src="https://via.placeholder.com/728x150.png?text=Test_Image_2" alt="Second Slide">
                 </div>
                 <!-- Third Slide -->
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Third Slide">
+                  <img class="d-block w-100" src="https://via.placeholder.com/728x150.png?text=Test_Image_3" alt="Third Slide">
                 </div>
                 <!-- Repeat if necessary -->
               </div>
@@ -150,36 +150,41 @@
 
         </div>
 
-        {{#each examples}}
-        <div class="col-md-3 col-sm-4 column">
-          <div class="card">
-            <!-- Card Image -->
-            <div class="view overlay">
-              <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
-              <a>
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-            <!-- Button -->
-            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i class="fas fa-shopping-cart pl-1 cartbutton"
-                data-id="{{this.id}}"></i></a>
-            <!-- Card Content -->
-            <div class="card-body">
-              <!-- Card Title -->
-              <h4 class="card-title">{{this.username}}</h4>
-              <hr>
-              <h4 class="card-title">{{this.price}}</h4>
-              <h4 class="card-title">{{this.location}}</h4>
-              <!-- Card Text -->
-              {{!-- <p class="card-text">Some quick example text here, probably info about the toy, price, etc</p> --}}
-              <div class="text-center">
-                <a href="sell/{{this.id}}" class="btn btn-primary">Go somewhere {{this.toysname}}</a>
-              </div>
-            </div>
+        <div class='card-columns'>
 
+          {{#each toys}}
+          <div class="col-md-3 col-sm-4 column">
+            <div class="card">
+              <!-- Card Image -->
+              <div class="view overlay">
+                <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!-- Button -->
+              <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i class="fas fa-shopping-cart pl-1 cartbutton"
+                  data-id="{{this.id}}"></i></a>
+              <!-- Card Content -->
+              <div class="card-body">
+                <!-- Card Title -->
+                <h4 class="card-title">{{this.username}}</h4>
+                <hr>
+                <h4 class="card-title">{{this.price}}</h4>
+                <h4 class="card-title">{{this.location}}</h4>
+                <!-- Card Text -->
+                {{!-- <p class="card-text">Some quick example text here, probably info about the toy, price, etc</p>
+                --}}
+                <div class="text-center">
+                  <a href="sell/{{this.id}}" class="btn btn-primary" id='buy-button'>Buy {{this.toysname}}</a>
+                </div>
+              </div>
+
+            </div>
           </div>
+          {{/each}}
         </div>
-        {{/each}}
+
       </div>
     </div>
   </div>
