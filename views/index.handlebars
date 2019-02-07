@@ -5,16 +5,105 @@
       {{!-- <h1>{{msg}}</h1> --}}
 
       <nav class="navbar navbar-expand-lg navbar-dark">
-        <!-- Navbar Brand -->
-        <a class="navbar-brand" href="#">TOYoda</a>
+        <div class="container">
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="#">TOYoda</a>
 
+          <!-- Collapse button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse" id="basicExampleNav">
+            <!-- Links -->
+
+            <ul class="navbar-nav mr-auto form-inline">
+              <li class="nav-item active text-center">
+                <a class="nav-link " href="/">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/sell">Sell Your Item</a>
+              </li>
+              {{!-- <li class="text-center">
+                <div class="text-center">
+                  <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/" class="text-light">
+                      Home</a></button>
+                </div>
+              </li>
+              <li class="text-center">
+                <div class="text-center">
+                  <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/sell" class="text-light">Sell
+                      Your Item</a></button>
+                </div>
+              </li> --}}
+            </ul>
+
+            <!-- Links -->
+
+            <form class="form-inline">
+              {{!-- <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              </div> --}}
+              <!-- Right -->
+              <ul class="right navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                  <a class="nav-link waves-effect" href="/checkout">
+                    <span class="badge red z-depth-1 mr-1 navbarcart">0</span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                {{!-- <li class="nav-item">
+                  <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
+                    target="_blank">
+                    <i class="fab fa-github mr-2"></i>MDB GitHub
+                  </a>
+                </li> --}}
+                <li class="nav-item">
+                  <div class="g-signin2" data-onsuccess="onSignin" style="margin-top: 2px; margin-left: 3px; "> </div>
+                </li>
+              </ul>
+
+            </form>
+          </div>
+          <!-- Collapsible content -->
+        </div>
+      </nav>
+
+
+      {{!-- ====================================================================== --}}
+      {{!-- <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+        <!-- Navbar Brand -->
+        <a class="navbar-brand" href="#">ToYoda</a>
         <!-- Possible change this to an "Add Item" button -->
         <!-- Add login button -->
         <form class="form-inline my-1">
-          <a href="/sell" type="button" class="btn btn-info btn-rounded waves-effect sell">Sell your toy</a>
+          <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/sell" class="text-light">Sell
+              Your Item</a></button>
           <button type="button" class="btn btn-success btn-rounded waves-effect">Sign In</button>
+          <div class="signout"><button onclick="signOut" class="btn g-signout2">Sign Out</button> </div>
         </form>
-      </nav>
+
+      </nav> --}}
+
+      {{!-- <h1> Profile</h1>
+      <img id="pic" />
+      <h1>Email</h1>
+      <p id="email"></p> --}}
 
       <div class="container-fluid">
         <div class="row">
@@ -61,32 +150,41 @@
 
         </div>
 
+        <div class='card-columns'>
 
-        {{!-- <button class="btn btn-danger sell">
-          <a href="/sell">Sell Your Item</a>
-        </button> --}}
-
-        
-          <div class='card-columns'>
-
-            {{#each toys}}
-            <div class="card" data-id="{{this.id}}">
-              <img class="card-img-top cardimage img-fluid" src="{{this.image}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{this.username}}</h5>
-                <h5 class="card-title">{{this.price}}</h5>
-                <h5 class="card-title">{{this.location}}</h5>
-                {{!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p> --}}
-                <a href="sell/{{this.id}}" class="btn" id ='buy-button'>Buy this toy!</a>
+          {{#each toys}}
+          
+            <div class="card">
+              <!-- Card Image -->
+              <div class="view overlay">
+                <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
               </div>
-            </div>
-            {{/each}}
+              <!-- Button -->
+              <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i class="fas fa-shopping-cart pl-1 cartbutton"
+                  data-id="{{this.id}}"></i></a>
+              <!-- Card Content -->
+              <div class="card-body">
+                <!-- Card Title -->
+                <h4 class="card-title">{{this.username}}</h4>
+                <hr>
+                <h4 class="card-title">{{this.price}}</h4>
+                <h4 class="card-title">{{this.location}}</h4>
+                <!-- Card Text -->
+                {{!-- <p class="card-text">Some quick example text here, probably info about the toy, price, etc</p>
+                --}}
+                <div class="text-center">
+                  <a href="sell/{{this.id}}" class="btn btn-primary" id='buy-button'>Buy {{this.toysname}}</a>
+                </div>
+              </div>
 
-          </div>
-        
-        
+            </div>
+          
+          {{/each}}
+        </div>
+
       </div>
     </div>
   </div>

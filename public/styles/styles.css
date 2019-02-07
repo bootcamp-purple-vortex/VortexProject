@@ -19,6 +19,16 @@ body{
   line-height: 2.5;
 }
 
+/* #signout{
+  display: block;
+} */
+.sell-form{
+  margin-top: 15px;
+}
+.nav-link{
+  margin-top: 1px;
+}
+
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
   .card-columns {column-count: 4;}
