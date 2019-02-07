@@ -102,9 +102,12 @@ var handlesellFormSubmit = function (event) {
     };
     
     if (!(toys.username && toys.toysname && toys.price && toys.location && toys.description)) {
-      alert("You must enter ");
+      alert("Please complete form young Jedi");
       return;
     }
+    // Validtion through bootstrap rendered this code useless
+    // if (isNaN(toys.price)) {
+    //   alert("There is no try, there is only do (ENTER A VALID PRICE");
   
     API.saveSell(toys).then(function () {
       refreshSell();
