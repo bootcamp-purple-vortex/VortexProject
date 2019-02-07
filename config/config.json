@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "process.env.DB_HOST",
-    "password": "process.env.DB_PASS",
+    "username": "root",
+    "password": "W84dinner!",
     "database": "toys_db",
     "host": "localhost",
     "dialect": "mysql"
