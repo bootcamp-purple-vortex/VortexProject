@@ -1,69 +1,75 @@
-<nav class="navbar navbar-expand-sm navbar-dark">
-  <div class="container">
-    <!-- Navbar brand -->
-    <a class="toyoda-brand" href="/">TOYoda</a>
+<div class="row">
+  <div class="col-md-12">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="toyoda-brand" href="/">TOYoda</a>
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-      <!-- Links -->
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+          <!-- Links -->
 
-      <ul class="navbar-nav mr-auto form-inline">
+          <ul class="navbar-nav mr-auto form-inline">
 
-        <li class="text-center">
-          <div class="text-center">
-            <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
-              Your Item</a>
-          </div>
-        </li>
-      </ul>
+            <li class="text-center">
+              <div class="text-center">
+                <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
+                  Your Item</a>
+              </div>
+            </li>
+          </ul>
 
-      <!-- Links -->
+          <!-- Links -->
 
-      <form class="form-inline">
+          <form class="form-inline">
 
-        <ul class="right navbar-nav nav-flex-icons">
+            <ul class="right navbar-nav nav-flex-icons">
 
-          <li class="nav-item">
-            <div class="g-signin2" data-onsuccess="onSignin" style="margin-top: 2px; margin-left: 3px; ">
+              <li class="nav-item">
+                <div class="g-signin2" data-onsuccess="onSignin" style="margin-top: 2px; margin-left: 3px; ">
+                </div>
+              </li>
+            </ul>
+
+          </form>
+        </div>
+        <!-- Collapsible content -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="card-title">Buy this toy!</h5>
+              <img class="image img-fluid" src="{{toys.image}}" />
+              <p>
+                <strong>ID</strong>: {{toys.id}}</p>
+              <p>
+                <p>
+                  <strong>User Name</strong>: {{toys.username}}</p>
+                <p>
+                  <strong>Toy Name</strong>: {{toys.toyname}}</p>
+                <p>
+                  <strong>Price</strong>: {{toys.price}}</p>
+                <p>
+                  <strong>Location</strong>: {{toys.location}}</p>
+                <p>
+                  <strong>Description:</strong> {{toys.description}}</p>
+                <a href="/">← Back To Home</a>
             </div>
-          </li>
-        </ul>
-
-      </form>
-    </div>
-    <!-- Collapsible content -->
-  </div>
-</nav>
-
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Buy this toy!</h5>
-          <img class="image img-fluid" src="{{toys.image}}" />
-          <p>
-            <strong>ID</strong>: {{toys.id}}</p>
-          <p>
-            <p>
-              <strong>User Name</strong>: {{toys.username}}</p>
-            <p>
-              <strong>Toy Name</strong>: {{toys.toyname}}</p>
-            <p>
-              <strong>Price</strong>: {{toys.price}}</p>
-            <p>
-              <strong>Location</strong>: {{toys.location}}</p>
-            <p>
-              <strong>Description:</strong> {{toys.description}}</p>
-            <a href="/">← Back To Home</a>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
