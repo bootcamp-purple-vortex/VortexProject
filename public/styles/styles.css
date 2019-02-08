@@ -2,17 +2,36 @@ nav{
   background-color: #75934e;
 }
 
-.navbar-brand {
+.toyoda-brand {
   font-family: 'Fredoka One', cursive;
   font-size: 40px;
 }
+
+.toyoda-brand {
+  color: white;
+  text-decoration: none;
+  transition: color 0.7s linear;
+  -webkit-transition: color 0.7s linear;
+  -moz-transition: color 0.7s linear;
+}
+
+.toyoda-brand:hover {
+  color: #d6dfcb;
+}
+
+#sell-button {
+  background-color: #9cc26a;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+
 
 body{
   background-color: #d5cfb6;
 }
 
 #buy-button{
-  background-color: #3c3c20;
+  background-color: #203c34;
 }
 
 .list-group-item {

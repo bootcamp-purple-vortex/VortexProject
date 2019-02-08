@@ -2,12 +2,10 @@
 
   <div class="row">
     <div class="col-md-12">
-      {{!-- <h1>{{msg}}</h1> --}}
-
-      <nav class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
           <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">TOYoda</a>
+          <a class="toyoda-brand" href="/">TOYoda</a>
 
           <!-- Collapse button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -20,59 +18,29 @@
             <!-- Links -->
 
             <ul class="navbar-nav mr-auto form-inline">
-              <li class="nav-item active text-center">
-                <a class="nav-link " href="/">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/sell">Sell Your Item</a>
-              </li>
-              {{!-- <li class="text-center">
-                <div class="text-center">
-                  <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/" class="text-light">
-                      Home</a></button>
-                </div>
-              </li>
+     
               <li class="text-center">
                 <div class="text-center">
-                  <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/sell" class="text-light">Sell
-                      Your Item</a></button>
+                  <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
+                      Your Item</a>
                 </div>
-              </li> --}}
+              </li>
             </ul>
 
             <!-- Links -->
 
             <form class="form-inline">
-              {{!-- <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              </div> --}}
+ 
               <!-- Right -->
               <ul class="right navbar-nav nav-flex-icons">
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                   <a class="nav-link waves-effect" href="/checkout">
                     <span class="badge red z-depth-1 mr-1 navbarcart">0</span>
                     <i class="fas fa-shopping-cart"></i>
                     <span class="clearfix d-none d-sm-inline-block"> Cart </span>
                   </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                {{!-- <li class="nav-item">
-                  <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-                    target="_blank">
-                    <i class="fab fa-github mr-2"></i>MDB GitHub
-                  </a>
                 </li> --}}
+
                 <li class="nav-item">
                   <div class="g-signin2" data-onsuccess="onSignin" style="margin-top: 2px; margin-left: 3px; "> </div>
                 </li>
@@ -83,27 +51,6 @@
           <!-- Collapsible content -->
         </div>
       </nav>
-
-
-      {{!-- ====================================================================== --}}
-      {{!-- <nav class="navbar navbar-expand-lg navbar-dark primary-color">
-        <!-- Navbar Brand -->
-        <a class="navbar-brand" href="#">ToYoda</a>
-        <!-- Possible change this to an "Add Item" button -->
-        <!-- Add login button -->
-        <form class="form-inline my-1">
-          <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/sell" class="text-light">Sell
-              Your Item</a></button>
-          <button type="button" class="btn btn-success btn-rounded waves-effect">Sign In</button>
-          <div class="signout"><button onclick="signOut" class="btn g-signout2">Sign Out</button> </div>
-        </form>
-
-      </nav> --}}
-
-      {{!-- <h1> Profile</h1>
-      <img id="pic" />
-      <h1>Email</h1>
-      <p id="email"></p> --}}
 
       <div class="container-fluid">
         <div class="row">
@@ -189,15 +136,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-
-<!-- jQuery -->
-<script src="../js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap Tooltips -->
-<script src="../js/popper.min.js"></script>
-<!-- Bootstrap -->
-<script src="../js/bootstrap.min.js"></script>
-<!-- MDBootstrap -->
-<script src="../js/mdb.min.js"></script>
