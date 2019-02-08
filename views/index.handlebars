@@ -4,10 +4,10 @@
     <div class="col-md-12">
       {{!-- <h1>{{msg}}</h1> --}}
 
-      <nav class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
           <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">TOYoda</a>
+          <a class="toyoda-brand" href="/">TOYoda</a>
 
           <!-- Collapse button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -20,26 +20,26 @@
             <!-- Links -->
 
             <ul class="navbar-nav mr-auto form-inline">
-              <li class="nav-item active text-center">
+              {{!-- <li class="nav-item active text-center">
                 <a class="nav-link " href="/">Home
                   <span class="sr-only">(current)</span>
                 </a>
-              </li>
-              <li class="nav-item">
+              </li> --}}
+              {{!-- <li class="nav-item">
                 <a class="nav-link" href="/sell">Sell Your Item</a>
-              </li>
+              </li> --}}
               {{!-- <li class="text-center">
                 <div class="text-center">
                   <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/" class="text-light">
                       Home</a></button>
                 </div>
-              </li>
+              </li> --}}
               <li class="text-center">
                 <div class="text-center">
-                  <button type="button" class="btn btn-info btn-rounded waves-effect"><a href="/sell" class="text-light">Sell
-                      Your Item</a></button>
+                  <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
+                      Your Item</a>
                 </div>
-              </li> --}}
+              </li>
             </ul>
 
             <!-- Links -->
@@ -50,23 +50,14 @@
               </div> --}}
               <!-- Right -->
               <ul class="right navbar-nav nav-flex-icons">
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                   <a class="nav-link waves-effect" href="/checkout">
                     <span class="badge red z-depth-1 mr-1 navbarcart">0</span>
                     <i class="fas fa-shopping-cart"></i>
                     <span class="clearfix d-none d-sm-inline-block"> Cart </span>
                   </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
+                </li> --}}
+
                 {{!-- <li class="nav-item">
                   <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
                     target="_blank">
