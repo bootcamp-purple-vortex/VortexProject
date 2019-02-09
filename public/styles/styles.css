@@ -56,6 +56,11 @@ body{
   margin-top: 1px;
 }
 
+#sold-text{
+  font-family:"Yanone Kaffeesatz", sans-serif;
+  font-size: 80px;
+}
+
 #buy-card{
   margin-top:20px;
 }

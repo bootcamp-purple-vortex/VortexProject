@@ -5,7 +5,12 @@ module.exports = (sequelize, DataTypes)=> {
     price: DataTypes.STRING,
     location: DataTypes.STRING,
     description: DataTypes.TEXT,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
+    buystatus: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    }
   });
   return Toys;
 };
