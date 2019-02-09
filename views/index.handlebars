@@ -99,13 +99,13 @@
 
         <div class='card-columns'>
 
-          {{#each toys mode="prepend"}}
+          {{#each toys}}
 
           <div class="card card-cascade narrower">
             <!-- Card Image -->
             <div class="view view-cascade overlay">
               <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
-              <a>
+              <a href="sell/{{this.id}}">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
@@ -118,9 +118,9 @@
               <!-- Card Title -->
               <h3 class="card-title">{{this.toysname}}</h3>
               <hr>
-              <h5 class="card-title font-weight-bold indigo-text py-2">{{this.username}}</h5>
-              <h5 class="card-title">{{this.price}}</h5>
-              <h5 class="card-title">{{this.location}}</h5>
+              <h6 class="card-title font-weight-bold indigo-text py-2">{{this.username}}</h5>
+              <h6 class="card-title">{{this.price}}</h5>
+              <h6 class="card-title">{{this.location}}</h5>
               <!-- Card Text -->
               {{!-- <p class="card-text">Some quick example text here, probably info about the toy, price, etc</p>
               --}}
