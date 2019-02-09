@@ -2,6 +2,10 @@ nav{
   background-color: #75934e;
 }
 
+p, h1, h2, h3, h4, h5, h6{
+  font-family: 'Nunito', sans-serif;
+}
+
 .toyoda-brand {
   font-family: 'Fredoka One', cursive;
   font-size: 40px;
@@ -25,10 +29,15 @@ nav{
   font-size: 20px;
 }
 
+#sell-button:hover{
+  color:white;
+}
+
 
 body{
   background-color: #d5cfb6;
 }
+
 
 #buy-button{
   background-color: #203c34;
@@ -46,6 +55,10 @@ body{
 }
 .nav-link{
   margin-top: 1px;
+}
+
+#buy-card{
+  margin-top:20px;
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
