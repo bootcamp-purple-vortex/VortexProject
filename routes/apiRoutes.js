@@ -9,12 +9,11 @@ module.exports = app => {
   // });
 
   // Get all sell
-  app.get("/api/sell", function(req, res) {
-    db.Toys.findAll({}).then(function(dbToys) {
+  app.get("/api/sell", (req, res) => {
+    db.Toys.findAll({}).then(dbToys => {
       res.json(dbToys);
     });
   });
-  
 
   // Create a new example
   // app.post("/api/examples", (req, res) => {
@@ -23,22 +22,21 @@ module.exports = app => {
   //   });
   // });
 
-  app.get("/checkout", function(req, res) {
+  app.get("/checkout", (req, res) => {
     // db.Toys.findAll({}).then(function(dbCheckout) {
-      res.render("checkout", {
-        msg: "Welcome!",
-        // checkout: dbCheckout
-      });
+    res.render("checkout", {
+      msg: "Welcome!",
+      // checkout: dbCheckout
+    });
     // });
   });
 
   // Create a new sell
-  app.post("/api/sell", function(req, res) {
-    db.Toys.create(req.body).then(function(dbToys) {
+  app.post("/api/sell", (req, res) => {
+    db.Toys.create(req.body).then(dbToys => {
       res.json(dbToys);
     });
   });
-
 
   // Delete an example by id
   // app.delete("/api/examples/:id", (req, res) => {

@@ -18,11 +18,11 @@
             <!-- Links -->
 
             <ul class="navbar-nav mr-auto form-inline">
-     
+
               <li class="text-center">
                 <div class="text-center">
                   <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
-                      Your Item</a>
+                    Your Item</a>
                 </div>
               </li>
             </ul>
@@ -30,7 +30,7 @@
             <!-- Links -->
 
             <form class="form-inline">
- 
+
               <!-- Right -->
               <ul class="right navbar-nav nav-flex-icons">
                 {{!-- <li class="nav-item">
@@ -99,36 +99,38 @@
 
         <div class='card-columns'>
 
-          {{#each toys}}
-          
-            <div class="card">
-              <!-- Card Image -->
-              <div class="view overlay">
-                <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <!-- Button -->
-              <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i class="fas fa-shopping-cart pl-1 cartbutton"
-                  data-id="{{this.id}}"></i></a>
-              <!-- Card Content -->
-              <div class="card-body">
-                <!-- Card Title -->
-                <h4 class="card-title">{{this.username}}</h4>
-                <hr>
-                <h4 class="card-title">{{this.price}}</h4>
-                <h4 class="card-title">{{this.location}}</h4>
-                <!-- Card Text -->
-                {{!-- <p class="card-text">Some quick example text here, probably info about the toy, price, etc</p>
-                --}}
-                <div class="text-center">
-                  <a href="sell/{{this.id}}" class="btn btn-primary" id='buy-button'>Buy {{this.toysname}}</a>
-                </div>
-              </div>
+          {{#each toys mode="prepend"}}
 
+          <div class="card card-cascade narrower">
+            <!-- Card Image -->
+            <div class="view view-cascade overlay">
+              <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
             </div>
-          
+            <!-- Button -->
+            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 float-right" href="sell/{{this.id}}"><i
+                class="fas fa-shopping-cart pl-1 cartbutton" data-id="{{this.id}}"></i></a>
+            <!-- Card Content -->
+
+            <div class="card-body card-body-cascade">
+              <!-- Card Title -->
+              <h3 class="card-title">{{this.toysname}}</h3>
+              <hr>
+              <h5 class="card-title font-weight-bold indigo-text py-2">{{this.username}}</h5>
+              <h5 class="card-title">{{this.price}}</h5>
+              <h5 class="card-title">{{this.location}}</h5>
+              <!-- Card Text -->
+              {{!-- <p class="card-text">Some quick example text here, probably info about the toy, price, etc</p>
+              --}}
+              {{!-- <div class="text-center">
+                <a href="sell/{{this.id}}" class="btn btn-primary" id='buy-button'>Buy {{this.toysname}}</a>
+              </div> --}}
+            </div>
+
+          </div>
+
           {{/each}}
         </div>
 
