@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "W84dinner!",
+    "password": "W84Dinner!",
     "database": "toys_db",
     "host": "localhost",
     "dialect": "mysql"
