@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-lg-12">
     <nav class="navbar navbar-expand-sm navbar-dark">
       <div class="container">
         <!-- Navbar brand -->
@@ -46,32 +46,40 @@
     <div class="container" id="buy-card">
       <div class="row">
         <div class="col-md-12">
-          <div class="card mt-6">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h5 class="card-title">Buy this toy!</h5>
-                  <img class="image img-fluid" src="{{toys.image}}" />
+          <div class="card card-cascade narrower mt-6">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class='view view-cascade overlay'>
+                  <img class="image img-fluid" id='buy-image' src="{{toys.image}}" />
                 </div>
-                <div class="col-sm-6">
+
+              </div>
+              <div class="col-md-6">
+                <div class='card-body card-body-cascade'>
                   {{!-- <p class"card-text">
                     <strong>ID</strong>: {{toys.id}}</p>
                   <p> --}}
-                    <p class"card-text">
-                      <strong>User Name</strong>: {{toys.username}}</p>
-                    <p class"card-text">
-                      <strong>Toy Name</strong>: {{toys.toysname}}</p>
-                    <p class"card-text">
-                      <strong>Price</strong>: {{toys.price}}</p>
-                    <p class"card-text">
-                      <strong>Location</strong>: {{toys.location}}</p>
-                    <p class"card-text">
-                      <strong>Description:</strong> {{toys.description}}</p>
+
+                    <h1 class="card-title" id='buy-title'>{{toys.toysname}}</h1>
+                    <hr>
+                    <h4 class="card-title">${{toys.price}}</h3>
+                      <br>
+                      <p class"card-text">
+                        <strong>Location</strong>: {{toys.location}}</p>
+                      <p class"card-text">
+                        <strong>Description:</strong> {{toys.description}}</p>
+                      <p class"card-text">
+                        <strong>Seller:</strong> {{toys.username}}</p>
+
                     <button class="buy-button"type="button" class="btn btn-light-blue">BUY NOW</button>
                     <a class="btn btn-rounded btn-success" href="/">Back Home</a>
+
                 </div>
+
               </div>
             </div>
+
           </div>
         </div>
       </div>
