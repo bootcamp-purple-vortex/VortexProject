@@ -120,6 +120,8 @@ var handlesellFormSubmit = function(event) {
   // if (isNaN(toys.price)) {
   //   alert("There is no try, there is only do (ENTER A VALID PRICE");
 
+  $("#sellModal").modal("show");
+
   API.saveSell(toys).then(function() {
     refreshSell();
   });
