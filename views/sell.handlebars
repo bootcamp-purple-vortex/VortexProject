@@ -1,30 +1,79 @@
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container">
+        <!-- Navbar brand -->
+        <a class="toyoda-brand" href="/">TOYoda</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <!-- Links -->
+
+            <ul class="navbar-nav mr-auto form-inline">
+
+                <li class="text-center">
+                    <div class="text-center">
+                        <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
+                            Your Item</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Links -->
+
+            <form class="form-inline">
+    
+                <ul class="right navbar-nav nav-flex-icons">
+
+                    <li class="nav-item">
+                        <div class="g-signin2" data-onsuccess="onSignin" style="margin-top: 2px; margin-left: 3px; ">
+                        </div>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+        <!-- Collapsible content -->
+    </div>
+</nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <form class="sell-form">
                 <div class="form-group">
                     <label for="formGroupExampleInput">User Name</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter User Name">
+                    <input type="text" class="form-control" id="username" placeholder="Enter User Name" required>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Toys Name</label>
-                    <input type="text" class="form-control" id="toyname" placeholder="Enter Toys Name">
+                    <input type="text" class="form-control" id="toyname" placeholder="Enter Toys Name" required>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Price</label>
-                    <input type="text" class="form-control" id="price" placeholder="Enter Price">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="price" placeholder="Enter Price" required>
+                    </div>
+
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Location</label>
-                    <input type="text" class="form-control" id="location" placeholder="Enter Location">
+                    <input type="text" class="form-control" id="location" placeholder="Enter Location" required>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Enter Description">
+                    <input type="text" class="form-control" id="description" placeholder="Enter Description" required>
                 </div>
                 <div class="form-group">
                     <label class="file-upload-container" for="file-upload">
-                        Upload an image of your toy: <input id="file-upload"type="file">
+                        Upload an image of your toy: <input id="file-upload" type="file">
                     </label>
                 </div>
 
@@ -32,15 +81,6 @@
             </form>
 
             <a href="/">← Back To Home</a>
-            {{!-- <h3>Sell:</h3>
-            <ul id="sell-list" class="list-group">
-                {{#each toys}}
-                <li data-id="{{this.id}}" class="list-group-item">
-                    <a href="example/{{this.id}}">{{this.username}}</a>
-                    <button class="btn btn-danger float-right delete">ｘ</button>
-                </li>
-                {{/each}}
-            </ul><br /> --}}
         </div>
     </div>
 </div>

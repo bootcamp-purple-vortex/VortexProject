@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = app => {
   // Load index page
   app.get("/", function(req, res) {
-    db.Toys.findAll({}).then(function(dbToys) {
+    db.Toys.findAll({ order: [["id", "DESC"]] }).then(dbToys => {
       res.render("index", {
         msg: "Welcome!",
         toys: dbToys

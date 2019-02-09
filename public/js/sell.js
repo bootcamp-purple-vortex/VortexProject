@@ -14,7 +14,7 @@ var upload_file = document.getElementById("file-upload");
 var image = "";
 
 // upload image 
-upload_file.addEventListener("change", function(event){
+upload_file.addEventListener("change", function (event) {
   console.log(event);
   var file = event.target.files[0];
   console.log(file);
@@ -23,26 +23,25 @@ upload_file.addEventListener("change", function(event){
   formdata.append('upload_preset', UPLOAD_PRESET);
 
   axios({
-      url: CLOUDINARY_URL,
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      data: formdata
+    url: CLOUDINARY_URL,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    data: formdata
   })
-  .then(function(res){
+    .then(function (res) {
       // console.log(res);
       console.log(res.data.secure_url);
       image = res.data.secure_url;
-  }).catch(function(err){
+    }).catch(function (err) {
       console.error(err);
-  });
+    });
 });
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-   
-  saveSell: function (toys) {
+  saveSell: toys => {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -52,7 +51,7 @@ var API = {
       data: JSON.stringify(toys)
     });
   },
-  getSell: function () {
+  getSell: () => {
     return $.ajax({
       url: "/api/sell",
       type: "GET"
@@ -61,61 +60,75 @@ var API = {
 };
 // refreshSell gets new toys from the db and repopulates the list
 var refreshSell = function() {
-    API.getSell().then(function (data) {
-      var $sells = data.map(function (sell) {
-        var $a = $("<a>")
-          .text("User Name : "+sell.username + "Toys Name : "+sell.toysname+"Price : "+sell.price)
-          .attr("href", "/sell/" + sell.id);
-  
-        var $li = $("<li>")
-          .attr({
-            class: "list-group-item",
-            "data-id": sell.id
-          })
-          .append($a);
-  
-        var $button = $("<button>")
-          .addClass("btn btn-danger float-right delete")
-          .text("ｘ");
-  
-        $li.append($button);
-  
-        return $li;
-      });
-  
-      $sellList.empty();
-      $sellList.append($sells);
+  API.getSell().then(function(data) {
+    var $sells = data.map(function(sell) {
+      var $a = $("<a>")
+        .text(
+          `User Name : ${sell.username} Toys Name : ${sell.toysname} Price : ${
+            sell.price
+          }`
+        )
+        .attr("href", "/sell/" + sell.id);
+
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": sell.id
+        })
+        .append($a);
+
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
+
+      $li.append($button);
+
+      return $li;
     });
-  };
-  // handleFormSubmit is called whenever we submit a new example
+
+    $sellList.empty();
+    $sellList.append($sells);
+  });
+};
+// handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handlesellFormSubmit = function (event) {
-    event.preventDefault();
-    // console.log(image);
-    var toys = {
-      username: $username.val().trim(),
-      toysname: $toysname.val().trim(),
-      price: $price.val().trim(),
-      location: $location.val().trim(),
-      description: $description.val().trim(),
-      image : image
-    };
-    
-    if (!(toys.username && toys.toysname && toys.price && toys.location && toys.description)) {
-      alert("You must enter ");
-      return;
-    }
-  
-    API.saveSell(toys).then(function () {
-      refreshSell();
-    });
-  
-    $username.val("");
-    $toysname.val("");
-    $price.val("");
-    $location.val("");
-    $description.val("");
-  
+var handlesellFormSubmit = function(event) {
+  event.preventDefault();
+  // console.log(image);
+  var toys = {
+    username: $username.val().trim(),
+    toysname: $toysname.val().trim(),
+    price: $price.val().trim(),
+    location: $location.val().trim(),
+    description: $description.val().trim(),
+    image: image
   };
+
+  if (
+    !(
+      toys.username &&
+      toys.toysname &&
+      toys.price &&
+      toys.location &&
+      toys.description
+    )
+  ) {
+    alert("Please complete form young Jedi");
+    return;
+  }
+  // Validtion through bootstrap rendered this code useless
+  // if (isNaN(toys.price)) {
+  //   alert("There is no try, there is only do (ENTER A VALID PRICE");
+
+  API.saveSell(toys).then(function() {
+    refreshSell();
+  });
+
+  $username.val("");
+  $toysname.val("");
+  $price.val("");
+  $location.val("");
+  $description.val("");
+};
 
 $sellsubmit.on("click", handlesellFormSubmit);
