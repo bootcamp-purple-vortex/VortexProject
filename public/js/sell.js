@@ -1,4 +1,5 @@
 // Get references to sell page elements
+
 var $username = $("#username");
 var $toysname = $("#toyname");
 var $price = $("#price");
@@ -47,13 +48,13 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "/api/sell",
+      url: "/api/toys",
       data: JSON.stringify(toys)
     });
   },
   getSell: () => {
     return $.ajax({
-      url: "/api/sell",
+      url: "/api/toys",
       type: "GET"
     });
   }
@@ -68,7 +69,7 @@ var refreshSell = function() {
             sell.price
           }`
         )
-        .attr("href", "/sell/" + sell.id);
+        .attr("href", "/buy/" + sell.id);
 
       var $li = $("<li>")
         .attr({
