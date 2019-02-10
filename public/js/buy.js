@@ -6,7 +6,7 @@ updateBuy = toys => {
     url: "/api/toys",
     data: toys
   }).then(() => {
-    alert(`${toys.id} updated to true`);
+    $("#buyModal").modal("show");
   });
 };
 
@@ -19,6 +19,7 @@ const buySubmit = () => {
 
   console.log(`ToyID to update: ${toyID}`)
   event.preventDefault();
+  
   updateBuy(newBuyStatus);
 };
 
