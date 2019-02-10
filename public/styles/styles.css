@@ -38,7 +38,6 @@ body{
   background-color: #d5cfb6;
 }
 
-
 #buy-button{
   background-color: #203c34;
 }
@@ -57,8 +56,17 @@ body{
   margin-top: 1px;
 }
 
+#sold-text{
+  font-family:"Yanone Kaffeesatz", sans-serif;
+  font-size: 80px;
+}
+
 #buy-card{
   margin-top:20px;
+}
+
+#buy-title{
+  font-size: 50px;
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */

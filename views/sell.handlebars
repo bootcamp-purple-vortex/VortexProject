@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Enter Description" required>
+                    <textarea type="text" class="form-control" id="description" placeholder="Enter Description" required></textarea>
                 </div>
                 <div class="form-group">
                     <label class="file-upload-container" for="file-upload">
@@ -77,9 +77,28 @@
                     </label>
                 </div>
 
-                <button type="" class="btn btn-primary" id="sellsubmit">Submit</button>
+                <button type="button" class="btn btn-primary" data-target="#sellModal" id="sellsubmit">Submit</button>
             </form>
             <hr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="sellModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="sellModalLabel">Item Listed!</h5>
+                        </div>
+                        <div class="modal-body">
+                            List another item? Or return to the home page?
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-rounded btn-secondary" href="/">Return Home</a>
+                            <a class="btn btn-rounded btn-primary" href="/sell">List Another Item</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <a href="/">← Back To Home</a>
         </div>
@@ -88,4 +107,4 @@
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/Sell.js"></script>
+<script type="text/javascript" src="./js/sell.js"></script>
