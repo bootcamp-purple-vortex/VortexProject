@@ -15,19 +15,19 @@
         <div class="collapse navbar-collapse" id="basicExampleNav">
           <!-- Links -->
 
-          <ul class="navbar-nav mr-auto form-inline">
+          <ul class="navbar-nav mr-auto form-inline float-left">
 
             <li class="text-center">
               <div class="text-center">
                 <a class="btn btn-rounded waves-effect" id="sell-button" href="/sell">Sell
-                  Your Item</a>
+                  Your Item CATS</a>
               </div>
             </li>
           </ul>
 
           <!-- Links -->
 
-          <form class="form-inline">
+          <form class="form-inline float-right">
 
             <ul class="right navbar-nav nav-flex-icons">
 
@@ -72,7 +72,8 @@
                       <p class"card-text">
                         <strong>Seller:</strong> {{toys.username}}</p>
 
-                    <button class="buy-button"type="button" class="btn btn-light-blue">BUY NOW</button>
+                    {{!-- <button type="button" class="btn btn-primary" data-target="#sellModal" id="buysubmit">Submit</button> --}}
+                    <a type="button" class="btn btn-light-blue" id="buysubmit" data="{{toys.id}}">BUY NOW</a>
                     <a class="btn btn-rounded btn-success" href="/">Back Home</a>
 
                 </div>
@@ -87,3 +88,5 @@
 
   </div>
 </div>
+
+<script type="text/javascript" src="../js/buy.js"></script>

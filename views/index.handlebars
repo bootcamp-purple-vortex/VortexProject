@@ -17,7 +17,7 @@
           <div class="collapse navbar-collapse" id="basicExampleNav">
             <!-- Links -->
 
-            <ul class="navbar-nav mr-auto form-inline">
+            <ul class="navbar-nav mr-auto form-inline float-left">
 
               <li class="text-center">
                 <div class="text-center">
@@ -29,7 +29,7 @@
 
             <!-- Links -->
 
-            <form class="form-inline">
+            <form class="form-inline float-right">
 
               <!-- Right -->
               <ul class="right navbar-nav nav-flex-icons">
@@ -102,6 +102,7 @@
 
         <div class='card-columns'>
 
+          {{!-- If a toy has been sold, create an overlay and disable buy buttons --}}
           {{#each toys}}
 
           <div class="card card-cascade narrower">
@@ -113,20 +114,17 @@
                 <h2 class="white-text" id="sold-text">SOLD</h2>
               </div>
             </div>
-            <!-- Button -->
-            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 float-right"><i class="fas fa-shopping-cart cartbutton"
-                data-id="{{this.id}}"></i></a>
 
             {{else}}
 
             <div class="view view-cascade overlay">
               <img class="card-img-top cardimage" src="{{this.image}}" alt="Card Image Cap">
-              <a href="sell/{{this.id}}">
+              <a href="buy/{{this.id}}">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
             <!-- Button -->
-            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 float-right" href="sell/{{this.id}}"><i
+            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 float-right" href="buy/{{this.id}}"><i
                 class="fas fa-shopping-cart cartbutton" data-id="{{this.id}}"></i></a>
 
             {{/if}}

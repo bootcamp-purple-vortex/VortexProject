@@ -1,47 +1,48 @@
 const db = require("../models");
 
 module.exports = app => {
-  // Get all examples
-  // app.get("/api/examples", (req, res) => {
-  //   db.Example.findAll({}).then((dbExamples) => {
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // Get all sell
-  app.get("/api/sell", (req, res) => {
+  // Get all Toys
+  app.get("/api/toys", (req, res) => {
     db.Toys.findAll({}).then(dbToys => {
       res.json(dbToys);
     });
   });
 
-  // Create a new example
-  // app.post("/api/examples", (req, res) => {
-  //   db.Example.create(req.body).then((dbExample) => {
-  //     res.json(dbExample);
-  //   });
-  // });
-
+  // User Checkout Cart
   app.get("/checkout", (req, res) => {
     // db.Toys.findAll({}).then(function(dbCheckout) {
     res.render("checkout", {
-      msg: "Welcome!",
+      msg: "Welcome!"
       // checkout: dbCheckout
     });
     // });
   });
 
-  // Create a new sell
-  app.post("/api/sell", (req, res) => {
+  // Create a new Toy for sale
+  app.post("/api/toys", (req, res) => {
     db.Toys.create(req.body).then(dbToys => {
       res.json(dbToys);
     });
   });
 
-  // Delete an example by id
-  // app.delete("/api/examples/:id", (req, res) => {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then((dbExample) => {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // Update buy status for item
+  app.put("/api/toys", (req, res) => {
+    db.Toys.update(
+      { buystatus: req.body },
+      { where: { id: req.body.id } }
+    ).then(dbToys => {
+      res.json(dbToys);
+    });
+  });
 };
+
+// router.put(‘/book/:bookId’, function (req, res, next) {
+//   Book.update(
+//     {title: req.body.title},
+//     {where: req.params.bookId}
+//   )
+//   .then(function(rowsUpdated) {
+//     res.json(rowsUpdated)
+//   })
+//   .catch(next)
+//  })

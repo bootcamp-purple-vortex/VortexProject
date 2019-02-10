@@ -21,14 +21,25 @@ module.exports = app => {
     });
   });
 
-   // Load example page and pass in an example by id
-   app.get("/sell/:id", function(req, res) {
+  app.get("/buy/:id", function(req, res) {
     db.Toys.findOne({ where: { id: req.params.id } }).then(function(dbToys) {
+      // console.log('dbToys', dbToys);
+
       res.render("buy", {
         toys: dbToys
       });
     });
   });
+
+   // Load example page and pass in an example by id
+  //  app.get("/buy/:id", function(req, res) {
+  //   db.Toys.findOne({ where: { id: req.params.id } }).then(function(dbToys) {
+  //     // console.log('dbToys', dbToys);
+  //     res.render("buy", {
+  //       toys: dbToys
+  //     });
+  //   });
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", (req, res) => {
