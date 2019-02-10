@@ -1,16 +1,13 @@
 const $buysubmit = $("#buysubmit");
 
-var API = {
-  updateBuy: toys => {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "PUT",
-      url: "/api/toys",
-      data: toys
-    });
-  }
+updateBuy = toys => {
+  $.ajax({
+    method: "PUT",
+    url: "/api/toys",
+    data: toys
+  }).then(() => {
+    alert(`${toys.id} updated to true`);
+  });
 };
 
 const buySubmit = () => {
@@ -19,12 +16,10 @@ const buySubmit = () => {
     id: toyID,
     buystatus: true
   };
-  
+
   console.log(`ToyID to update: ${toyID}`)
   event.preventDefault();
-  API.updateBuy(newBuyStatus).then(() => {
-    alert(`${toyID} updated to true`);
-  });
+  updateBuy(newBuyStatus);
 };
 
 $buysubmit.on("click", buySubmit);

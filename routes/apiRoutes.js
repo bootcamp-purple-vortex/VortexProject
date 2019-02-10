@@ -28,7 +28,7 @@ module.exports = app => {
   // Update buy status for item
   app.put("/api/toys", (req, res) => {
     db.Toys.update(
-      { buystatus: req.body },
+      { buystatus: req.body.buystatus },
       { where: { id: req.body.id } }
     ).then(dbToys => {
       res.json(dbToys);
