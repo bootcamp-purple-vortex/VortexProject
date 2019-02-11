@@ -47,7 +47,7 @@ body{
   color: white;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
   font-family: 'Dosis', sans-serif;
-  font-size: 16px;
+  font-size: 40px;
   font-weight: bold
 }
 
@@ -60,7 +60,7 @@ body{
   color: black;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
   font-family: 'Dosis', sans-serif;
-  font-size: 16px;
+  font-size: 40px;
   font-weight: bold
 }
 
@@ -101,6 +101,12 @@ body{
     font-size: 12px;
     height: 34px;
     padding-top:8px;
+  }
+}
+
+@media (max-width: 575px) {  
+  .carousel-content, .carousel-content-too{
+    font-size: 20px;
   }
 }
 
