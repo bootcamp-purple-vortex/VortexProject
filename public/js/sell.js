@@ -16,6 +16,7 @@ var image = "";
 
 // upload image 
 upload_file.addEventListener("change", function (event) {
+  console.log(upload_file);
   console.log(event);
   var file = event.target.files[0];
   console.log(file);
